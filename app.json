@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/Todo/Todo",
+    "pages/Anniversary/Anniver",
+    "pages/Anniversary/detailAnniver/detailAnniver",
+    "pages/Anniversary/newAnniver/newAnniver"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "晴天豆",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath":"image/weatherunselected.png",
+        "selectedIconPath":"image/weather.png",
+        "text": "天气"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath":"image/billsunselected.png",
+        "selectedIconPath":"image/Bills.png",
+        "text": "记账"
+      },
+      {
+        "pagePath":"pages/Todo/Todo",
+        "text":"Todo",
+        "iconPath":"image/todo-o.png",
+        "selectedIconPath":"image/Todo.png"
+      },
+      {
+        "pagePath": "pages/Anniversary/Anniver",
+        "text": "Anniversary",
+        "iconPath": "image/date.png",
+        "selectedIconPath": "image/date-selected.png"
+      }
+    ]
+  }
+}

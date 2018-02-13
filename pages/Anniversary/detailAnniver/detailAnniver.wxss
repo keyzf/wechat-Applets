@@ -1,0 +1,37 @@
+/* pages/detailAnniver/detailAnniver.wxss */
+.wrapper{
+  width: 100%;
+  margin-top: 40rpx;
+}
+.input-view{
+  width: 80%;
+  padding: 10rpx;
+  margin: 0 auto;
+}
+.input-view .input{
+  padding: 10rpx;
+  border-bottom: 1px solid #aaa;
+}
+.set-view{
+  width: 80%;
+  margin: 0 auto;
+}
+.set-view .time-select-view{
+  padding-left:10rpx; 
+  margin-top: 40rpx; 
+  margin-bottom: 40rpx;
+}
+.del-button,.save-button{
+  font-size: 40rpx;
+  text-align: center;
+  padding: 20rpx 20rpx;
+  border-radius: 5px;
+  color: #fff;
+}
+.save-button{
+  background-color: rgb(105, 173, 228)
+}
+.del-button{
+  margin-bottom: 30rpx;
+  background-color: rgb(240, 76, 71)
+}

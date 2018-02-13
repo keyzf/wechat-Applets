@@ -1,0 +1,23 @@
+<scroll-view scroll-y="true">
+  <view class='inputform'>
+    <input type='text' bindinput='input' class='input' placeholder='Enter what you want to do today' value="{{inputContent}}"/>
+    <view class='btn' bindtap='btnClick'>+</view>
+  </view>
+  <view class='todoList'>
+    <view class='todo-content'>
+      <view wx:for="{{todoList}}">
+       <view class='todoLine'>
+        <icon type="{{item.completed ? 'success':'circle'}}" size='27' bindtap='toggleTodo' data-todo-id="{{item.id}}" color="{{item.completed ? 'rgb(137, 245, 239)':'rgb(190,190,190)'}}"></icon>
+        <text class='{{item.completed?"textDelete":"text"}}'>{{item.todo}}</text>
+        <icon type='clear' size='25' class='clearIcon' bindtap='deleteTodo' data-todo-id="{{item.id}}"></icon>
+       </view>  
+      </view>
+    </view>  
+    <view class='todo-footer'>
+      <text>{{uncompletedNum}} 未完成</text>
+    </view>
+    <view class='proverb'>
+      <text>Never put off until tomorrow what may be done today</text>
+    </view>
+  </view>
+</scroll-view>

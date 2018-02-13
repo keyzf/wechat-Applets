@@ -1,0 +1,17 @@
+<scroll-view scroll-y="true">
+  <view class='wrapper'>
+    <view class='input-view'>
+      <input placeholder='事件' bindinput='inputEvent' class='input' focus/>
+    </view>
+    <view class='set-view'>
+      <view class='time-select-view'>
+        <picker mode="date" value="{{date}}" start="1990-01-01" end="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            时间: {{date}}
+          </view>
+        </picker>
+      </view>
+      <view class='button' bindtap='saveEvent'>保存</view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,105 @@
+<!--logs.wxml-->
+<scroll-view scroll-y="true" class='wrapper'>
+<view class='total-wrapper'>
+  <view class='bills-details-view'>
+    <view class='total'>
+      <view>
+        <text>收入(元)</text>
+        <text>{{totalIncome}}</text>
+      </view>
+      <view>
+        <text>支出(元)</text>
+        <text>{{totalExpenses}}</text>  
+      </view>
+      <view>
+        <text>结余(元)</text>
+        <text>{{surplus}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+  
+  <view class='detail'>
+    <view wx:for="{{bills}}" wx:key="item">
+      <view class='detail-item' bindlongpress='deleteItem' data-bills-id='{{item.id}}'>
+        <view style='width:80rpx;font-size:27rpx;color:#111;padding:5rpx 2rpx;'>{{item.type}}</view>
+        <view style='width:200rpx;font-size:28rpx;padding:5rpx 2rpx;'>{{item.date}}</view>
+        <view style='width:200rpx;font-size:28rpx;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;padding:5rpx 2rpx;'>{{item.event}}</view>
+        <view style='width:100rpx;font-size:28rpx;padding:5rpx 2rpx;'>{{item.money}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='add-count-btn' bindtap='addCount'>+</view>
+  <view class='income-btn' wx:if="{{billBtnShow}}" bindtap='incomeShow'>收入</view>
+  <view class='expend-btn' wx:if="{{billBtnShow}}" bindtap='expendShow'>支出</view>
+  <view class="income-view" wx:if="{{incomeViewShow}}">
+    <view class='bill-icon-view' catchtap='addIncome' id='工资'>
+      <image src='https://t1.picb.cc/uploads/2018/02/03/s65Dg.png' class='bill-icon'></image>
+      <text>工资</text>
+    </view>
+    <view class='bill-icon-view' catchtap='addIncome' id='兼职'>
+      <image src='https://t1.picb.cc/uploads/2018/02/03/s6MqG.png' class='bill-icon'></image>
+      <text>兼职</text>
+    </view>
+    <view class='bill-icon-view' catchtap='addIncome' id='红包'>
+      <image src='https://t1.picb.cc/uploads/2018/02/03/s6Gyw.png' class='bill-icon'></image>
+      <text>红包</text>
+    </view>
+    <view class='bill-icon-view' catchtap='addIncome' id='股票'>
+      <image src='https://t1.picb.cc/uploads/2018/02/03/s6HcR.png' class='bill-icon'></image>
+      <text>股票</text>
+    </view>
+    <view class='bill-icon-view' catchtap='addIncome' id='理财'>
+      <image src='https://t1.picb.cc/uploads/2018/02/03/s6qtj.png' class='bill-icon'></image>
+      <text>理财</text>
+    </view>
+    <view class='bill-icon-view' catchtap='addIncome' id='其它'>
+      <image src='https://t1.picb.cc/uploads/2018/02/03/s675c.png' class='bill-icon'></image>
+      <text>其他</text>
+    </view>
+  </view>
+  <view class='expend-view' wx:if="{{expendViewShow}}">
+    <view class='bill-icon-view' catchtap='addExpend' id='餐饮'>
+      <image src='https://t1.picb.cc/uploads/2018/02/03/s6AiX.png' class='bill-icon'></image>
+      <text>餐饮</text>
+    </view>
+    <view class='bill-icon-view' catchtap='addExpend' id='购物'>
+      <image src='https://t1.picb.cc/uploads/2018/02/03/s6rQ8.png' class='bill-icon'></image>
+      <text>购物</text>
+    </view>
+    <view class='bill-icon-view' catchtap='addExpend' id='交通'>
+      <image src='https://t1.picb.cc/uploads/2018/02/03/s6OTy.png' class='bill-icon'></image>
+      <text>交通</text>
+    </view>
+    <view class='bill-icon-view' catchtap='addExpend' id='娱乐'> 
+      <image src='https://t1.picb.cc/uploads/2018/02/03/s63yN.png' class='bill-icon'></image>
+      <text>娱乐</text>
+    </view>
+    <view class='bill-icon-view' catchtap='addExpend' id='医疗'>
+      <image src='https://t1.picb.cc/uploads/2018/02/03/s6hSK.png' class='bill-icon'></image>
+      <text>医疗</text>
+    </view>
+    <view class='bill-icon-view' catchtap='addExpend' id='其他'>
+      <image src='https://t1.picb.cc/uploads/2018/02/03/s675c.png' class='bill-icon'></image>
+      <text>其他</text>
+    </view>
+  </view>
+  <view class='bill-input-view' wx:if="{{inputViewShow}}">
+    <view class='input-view'>
+      <input class='event-input' placeholder='写点什么吧' bindinput='eventinput'></input>
+      <input class='money-input' placeholder='￥0' bindinput='moneyinput' type='digit'></input>
+      <view bindtap='addToHistory'><icon type='success_no_circle'></icon></view>
+    </view>
+    <picker-view indicator-style="height: 40px;" value="{{value}}" bindchange="bindChange" class='date-picker-view'>
+      <picker-view-column>
+        <view wx:for="{{years}}" wx:key="item" style="line-height: 40px;">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{months}}" wx:key="item" style="line-height: 40px;">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{days}}" wx:key="item" style="line-height: 40px;">{{item}}日</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</scroll-view>

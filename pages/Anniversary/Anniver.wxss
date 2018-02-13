@@ -1,0 +1,45 @@
+.wrapper{
+  width: 100%;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.showTip{
+  text-align: center;
+  width: 80%;
+  margin: 20rpx auto;
+  font-size: 40rpx;
+  color: #686767;
+}
+.addAnniver{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  right: 0;
+  width: 80rpx;
+  height: 80rpx;
+  color: #fff;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 70rpx;
+  background-color: rgba(92, 194, 143,0.9);
+  border-radius: 5px;
+}
+.anniver-view{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  width: 86%;
+  box-shadow:inset 0 0 2px #686767;
+  padding: 20rpx;
+  border-radius: 5px;
+  margin: 20rpx auto;
+}
+.anniver-view .event-start{
+  width: 45%;
+  text-align: center;
+  padding: 10rpx;
+  line-height: 50rpx;
+}

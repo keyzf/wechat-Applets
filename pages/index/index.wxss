@@ -1,0 +1,151 @@
+/**index.wxss**/
+text{
+  display: block;
+}
+.container{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: url(https://t1.picb.cc/uploads/2018/01/30/U3Twu.jpg);
+  background-repeat: no-repeat;
+  color: #fff;
+}
+/**today-weather**/
+.container .today-weather-container{
+  margin: 10rpx auto;
+  width: 96%;
+  box-shadow: 0 0 2px #aaa inset;
+}
+.container .today-weather-container .location{
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  max-width: 220rpx;
+  font-size: 27rpx;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 2px #aaa inset;
+  border-radius: 5px;
+  padding: 10rpx;
+}
+.container .today-weather-container .toggle-button{
+  text-align: center;
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding:0;
+  font-size: 60rpx;
+  width: 80rpx;
+}
+.container .today-weather-container .hum_prec_wind{
+  display: flex;
+}
+.humidity,.precipitation,.wind{
+  min-width: 220rpx;
+  padding: 10rpx;
+  text-align: center;
+  justify-content: center;
+  line-height: 60rpx;
+}
+.current-weather-image-container{
+  padding: 10rpx 10rpx 0 10rpx;
+}
+.current-weather-image{
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 60rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20rpx;
+}
+.container .today-weather-container .tmp-condtxt{
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 50rpx;
+}
+
+/**future weather**/
+.container .future-weather-container{
+  margin: 10rpx auto;
+  padding: 20rpx;
+  box-sizing: border-box;
+
+}
+.container .future-weather-container .forecast{
+  display:flex;
+}
+.weather-overview{
+  min-width: 200rpx;
+  line-height: 56rpx;
+  font-size: 28rpx;
+  margin: 0 10rpx;
+  padding: 10rpx;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 2px #aaa inset; 
+  text-align: center;
+}
+.weatherImage{
+  width: 90rpx;
+  height: 90rpx;
+}
+
+/**lifestyle**/
+.lifestyle-container{
+  width: 94%;
+  font-size: 28rpx;
+  line-height: 38rpx;
+}
+.lifestyle-view{
+  margin:20rpx 0; 
+  min-height: 100rpx;
+  padding: 30rpx 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 2px #aaa inset;
+  border-radius: 3px;
+}
+.lifestyle-image-view{
+  float: left;
+  font-size: 20rpx;
+  text-align: center;
+  max-width: 120rpx;
+  line-height: 22rpx;
+}
+.lifestyle-image{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 20rpx;
+}
+/**city select**/
+.select-city{
+  color: #000;
+  position: fixed;
+  width: 100%; 
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10rpx;
+  box-shadow: 0 0 2px #111 inset;
+}
+.city-header{
+  display: flex;
+  font-size: 34rpx;
+  justify-content: space-between;
+  width: 90%;
+  font-weight: 500;
+  padding: 20rpx; 
+  margin:0 auto; 
+  border-bottom: 1px solid #aaa;
+}
+.select-city .city-picker-view{
+  width: 99%;
+  height: 200px;
+  margin: 0 auto;
+}
+.select-city .city-picker-view .city-picker-column{
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 500;
+}
