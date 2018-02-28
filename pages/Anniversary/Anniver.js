@@ -12,11 +12,17 @@ Page({
     if(typeof Anniversary!=='object'){
       Anniversary=[]
     }
-    var newDate = wx.getStorageSync("AnniversaryNewDate")
+    console.log(Anniversary)
     var curDate=formatTime(new Date())
-    if(newDate!==curDate&&Anniversary.length!==0){
+    console.log(curDate)
+    if (Anniversary.length!==0){
       for(let i=0;i<Anniversary.length;i++){
-        Anniversary[i].time+=1
+        if(curDate!==Anniversary[i].saveDate){
+          let cur = new Date()
+          let days = parseInt(Math.abs(cur - Anniversary[i].oDate) / (1000 * 60 * 60 * 24))
+          Anniversary[i].time=days
+          Anniversary[i].saveDate = curDate
+        }
       }
     }
     this.setData({

@@ -27,10 +27,7 @@ App({
   getWeatherInfo:function(city,fc){
     wx.request({
       url: "https://free-api.heweather.com/s6/weather/forecast?location="+city+"&key=5a27e7497fb849729ced5631fe9260cd",
-      //url: "https://free-api.heweather.com/s6/weather/forecast?location=闸北区&key=5a27e7497fb849729ced5631fe9260cd",
       success:function(res){
-       // console.log("forecast:")
-        //console.log(res.data.HeWeather6[0].daily_forecast)
         fc(res.data)
       },
       fail:function(){
@@ -42,8 +39,7 @@ App({
     wx.request({
       url: "https://free-api.heweather.com/s6/weather/lifestyle?location=" + city +"&key=5a27e7497fb849729ced5631fe9260cd",
       success:function(res){
-        //console.log("lifestyle:")
-        //console.log(res.data.HeWeather6[0].lifestyle)
+        console.log(res)
         fc(res.data)
       }
     })
@@ -51,10 +47,8 @@ App({
   getCurWeatherInfo:function(city,fc){
     wx.request({
       url: "https://free-api.heweather.com/s6/weather/now?location=" + city + "&key=5a27e7497fb849729ced5631fe9260cd",
-      //url: "https://free-api.heweather.com/s6/weather/now?location=浦东新区&key=5a27e7497fb849729ced5631fe9260cd",
       success: function (res) {
-        //console.log("now:")
-        //console.log(res.data.HeWeather6[0].now)
+        console.log(res)
         fc(res.data)
       }
     })

@@ -16,6 +16,7 @@ Page({
     this.setData({
       date:today
     })
+    //console.log(today)
   },
   inputEvent:function(e){
     //console.log(e.detail.value)
@@ -36,9 +37,11 @@ Page({
     var date=this.data.date
     var aDate=date.split("-")
     var oDate=new Date(aDate[1]+"-"+aDate[2]+"-"+aDate[0])
-    var curDate=new Date()
+    let curDate=new Date()
+    let saveDate = formatTime(new Date())
+    let id = curDate.getTime()
     var days=parseInt(Math.abs(curDate-oDate)/(1000*60*60*24))
-    var anniver={"date":date,'text':txt,'time':days,'id':curDate.getTime()}
+    var anniver={"date":date,'text':txt,'time':days,'id':id,'saveDate':saveDate,'oDate':oDate}
     wx.navigateBack({
       success:function(res){
         //console.log(pageArray[pageArray.length - 2].data.Anniversary)
@@ -51,10 +54,6 @@ Page({
         wx.setStorage({
           key: 'Anniversary',
           data: anniversary,
-        })
-        wx.setStorage({
-          key: 'AnniversaryNewDate',
-          data: formatTime(new Date()),
         })
       }
     })
