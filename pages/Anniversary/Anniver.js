@@ -19,7 +19,8 @@ Page({
       for(let i=0;i<Anniversary.length;i++){
         if(curDate!==Anniversary[i].saveDate){
           let cur = new Date()
-          let days = parseInt(Math.abs(cur - Anniversary[i].oDate) / (1000 * 60 * 60 * 24))
+          let oDate = new Date(Anniversary[i].date)
+          let days = parseInt(Math.abs(cur - oDate) / (1000 * 60 * 60 * 24))
           Anniversary[i].time=days
           Anniversary[i].saveDate = curDate
         }
